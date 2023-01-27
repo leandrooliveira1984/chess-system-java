@@ -2,25 +2,25 @@ package boardgame;
 
 public class Position {
 
-	private int row;
-	private int column;
+	private int row; // a posição está em uma coluna
+	private int column; // a posição está em uma linha
 	
 	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
 	}
 	
-	public int GetRow() {
+	public int getRow() {
 		return row;
 	}
-	public void SetRow(int row) {
+	public void setRow(int row) {
 		this.row = row;
 	}
 	
-	public int GetColumn() {
+	public int getColumn() {
 		return column;
 	}
-	public void SetColumn(int column) {
+	public void setColumn(int column) {
 		this.column = column;
 	}
 	
