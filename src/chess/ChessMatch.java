@@ -1,6 +1,9 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 
 public class ChessMatch { // é nesta classe que terão as regas de xadrez.
 
@@ -8,10 +11,10 @@ public class ChessMatch { // é nesta classe que terão as regas de xadrez.
 	
 	public ChessMatch() {
 		board = new Board (8, 8); // quem tem que saber a dimensão do tabuleiro é a classe ChessMatch. Assim todo
-		                        // tabuleiro do partida terá a dimensão (8, 8). 
+		inicialSetup();           // tabuleiro do partida terá a dimensão (8, 8). 
 	}
 	
-	public ChessPiece[][] getPieces(){ 
+	public ChessPiece[][] getPieces(){ // retorna a Matriz de peças
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i=0; i<board.getRows(); i++) {
 			for(int j=0; j<board.getColumns(); j++) {
@@ -29,5 +32,20 @@ public class ChessMatch { // é nesta classe que terão as regas de xadrez.
 
 	/*Casting - é uma conversão de um objeto, permitido devido a herença. O Upcasting é quando atribuimos um 
 	 * objeto instanciado a uma classe em um nivel hierarquico maior e o Downcasting é o inverso.*/
+	
+	private void inicialSetup() {
+		board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
+		board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
+		board.placePiece(new King(board, Color.WHITE), new Position(7, 4));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }  
+
 	
